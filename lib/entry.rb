@@ -17,6 +17,13 @@ class Entry
     put_image into: dir
   end
 
+  def path
+    @base
+  end
+  def title
+    content.title
+  end
+
   private
 
   def put_page into: raise
@@ -55,6 +62,7 @@ class Entry
   end
 
   def content
+    @_content ||=
     Content.new(File.read content_file)
     .tap { |x|
       them = images
