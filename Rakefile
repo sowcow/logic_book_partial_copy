@@ -16,6 +16,8 @@ end
 task :pub => :publish
 
 task :publish => :build do
+  system 'git commit -m "task: publish"'
+
   temp = '../_tmp_output'
   rm_rf temp
   cp_r 'output', temp
