@@ -22,8 +22,8 @@ task :publish do
 
   system 'git checkout gh-pages'
 
-  rm_r '*'
-  mv temp + '*', '.'
+  system 'rm -rf *'
+  system "mv #{temp}/* ."
 
   system 'git add -A'
   system 'git commit -m "task: publish"'
