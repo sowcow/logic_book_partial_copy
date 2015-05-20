@@ -13,23 +13,20 @@ task :build do
 end
 
 
-# XXX: it sucks ↓
-#
-#task :pub => :publish
-#
-#task :publish do
-#  system 'git checkout gh-pages'
-#
-#  here = Pathname '*'
-#  Pathname.glob(here).each { |file|
-#    next if file.basename == 'output'
-#    rm_r file
-#  }
-#  mv 'output/*', '.'
-#  rm_r 'output'
-#
-#  system 'git add -A'
-#  system 'git commit -m "task: publish"'
-#  system 'git push origin gh-pages'
-#  system 'git checkout master'
-#end
+task :pub => :publish
+
+task :publish do
+  temp = '../_tmp_output'
+  rm_rf temp
+  cp_r 'output', temp
+
+  system 'git checkout gh-pages'
+
+  rm_r '*'
+  mv temp + '*', '.'
+
+  system 'git add -A'
+  system 'git commit -m "task: publish"'
+  #system 'git push origin gh-pages'
+  #system 'git checkout master'
+end
