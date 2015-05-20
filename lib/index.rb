@@ -26,6 +26,10 @@ doctype 5
 html
   head
     meta charset='utf-8'
+    sass:
+      html, head
+        margin: 0
+        padding: 0
   body
     == ribbon
     ul

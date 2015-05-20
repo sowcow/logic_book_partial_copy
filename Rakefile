@@ -30,6 +30,9 @@ task :publish => :build do
 
   system 'git add -A'
   system 'git commit -m "task: publish"'
+
   system 'git push origin gh-pages'
+  system 'git push origin master'
   system 'git checkout master'
+  # so shitty code...
 end
