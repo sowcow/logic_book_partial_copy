@@ -25,8 +25,8 @@ task :publish => :build do
   system 'rm -rf *'
   system "mv #{temp}/* ."
 
-  #system 'git add -A'
-  #system 'git commit -m "task: publish"'
-  #system 'git push origin gh-pages'
-  #system 'git checkout master'
+  system 'git add -A'
+  system 'git commit -m "task: publish"'
+  system 'git push origin gh-pages'
+  system 'git checkout master'
 end
