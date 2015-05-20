@@ -15,7 +15,7 @@ end
 
 task :pub => :publish
 
-task :publish do
+task :publish => :build do
   temp = '../_tmp_output'
   rm_rf temp
   cp_r 'output', temp
