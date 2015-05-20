@@ -27,7 +27,7 @@ html
   head
     meta charset='utf-8'
     sass:
-      html, head
+      html, body
         margin: 0
         padding: 0
   body
