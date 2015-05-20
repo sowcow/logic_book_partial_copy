@@ -94,6 +94,12 @@ html
 
       $bg: #eee5d6
       $w: 664px
+      $fg: #46342a
+
+      a
+        color: rgba(200, 0, 0, 0.7)
+      //mix(mix($bg, $fg), black)
+      //maroon
 
       html, body, div
         margin: 0
@@ -101,7 +107,7 @@ html
 
       html
         background-color: $bg
-        color: #46342a
+        color: $fg
 
       body
         width: $w
