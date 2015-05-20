@@ -16,6 +16,7 @@ end
 task :pub => :publish
 
 task :publish => :build do
+  system 'git add -A'
   system 'git commit -m "task: publish"'
 
   temp = '../_tmp_output'
